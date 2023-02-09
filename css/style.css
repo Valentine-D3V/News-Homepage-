@@ -121,7 +121,7 @@ button {
   --Body-Background: hsl(36, 100%, 99%);
   --Nav-Background: hsl(36, 100%, 99%);
 
-  --Primary-Text-Color: hsl(233, 8%, 79%);
+  --Primary-Text-Color: hsl(236, 13%, 42%);
   --Secondary-Text-Color: hsl(240, 100%, 5%);
   --Tertiary-Text-Color: hsl(36, 100%, 99%);
   --Number-Color: hsl(233, 8%, 79%);
@@ -214,4 +214,65 @@ header {
   visibility: visible;
   padding: 100px 32px 32px 52px;
   box-shadow: -5px 0 11px 0 rgb(0 0 0 / 0.2);
+}
+
+/* ******************* */
+/* MAIN ARTICLE */
+/* ******************* */
+
+.main-article {
+  display: grid;
+  gap: 20px;
+}
+
+.main-article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-article-heading {
+  font-size: var(--Main-Article-Heading-FS);
+}
+
+.main-article-text {
+  font-size: var(--Text-FS);
+
+  font-weight: 400;
+  color: var(--Primary-Text-Color);
+}
+
+.main-article-button {
+  font-size: var(--Button-FS);
+  text-align: center;
+  letter-spacing: 4.38 px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--Tertiary-Text-Color);
+
+  background: var(--Secondary-Color);
+  padding: 16px 32px;
+}
+
+.main-article-content-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ******************* */
+/* MEDIA QUERY */
+/* ******************* */
+
+@media (min-width: 800px) {
+  .main-article-content {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .main-article-content-inner {
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+  }
 }
