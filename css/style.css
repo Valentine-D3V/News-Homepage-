@@ -90,3 +90,43 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+/* ******************* */
+/* VARIABLES */
+/* ******************* */
+
+:root {
+  /* TEXT */
+
+  --Font-Family: "Inter", sans-serif;
+
+  /* 18.00px → 15.00px */
+  --Nav-FS: clamp(0.94rem, calc(1.19rem + -0.28vw), 1.13rem);
+
+  /* 40.00px → 56.00px */
+  --Main-Article-Heading-FS: clamp(2.5rem, calc(2.15rem + 1.5vw), 3.5rem);
+
+  /* 32.00px → 40.00px */
+  --New--Heading-FS: clamp(2rem, calc(1.82rem + 0.75vw), 2.5rem);
+  --New-Article-Heading-FS: 1.25rem;
+
+  --More-Heading-FS: 1.13rem;
+  --More-Number-FS: 2rem;
+
+  --Text-FS: 0.94rem;
+  --Button-FS: 0.88rem;
+
+  /* COLORS */
+
+  --Body-Background: hsl(36, 100%, 99%);
+  --Nav-Background: hsl(36, 100%, 99%);
+
+  --Primary-Text-Color: hsl(233, 8%, 79%);
+  --Secondary-Text-Color: hsl(240, 100%, 5%);
+  --Tertiary-Text-Color: hsl(36, 100%, 99%);
+  --Number-Color: hsl(233, 8%, 79%);
+
+  --Primary-Color: hsl(240, 100%, 5%);
+  --Secondary-Color: hsl(5, 85%, 63%);
+  --Tertiary-Color: hsl(35, 77%, 62%);
+}
