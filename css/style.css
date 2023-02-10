@@ -129,6 +129,8 @@ button {
   --Primary-Color: hsl(240, 100%, 5%);
   --Secondary-Color: hsl(5, 85%, 63%);
   --Tertiary-Color: hsl(35, 77%, 62%);
+
+  --Transition: 0.8s all;
 }
 
 /* ******************* */
@@ -241,6 +243,14 @@ header {
   box-shadow: -5px 0 11px 0 rgb(0 0 0 / 0.2);
 }
 
+.nav-menu li {
+  transition: var(--Transition);
+}
+
+.nav-menu li:is(:hover, :focus-visible) {
+  color: var(--Secondary-Color);
+}
+
 /* ******************* */
 /* MAIN ARTICLE */
 /* ******************* */
@@ -290,6 +300,12 @@ picture img {
 
   background: var(--Secondary-Color);
   padding: 13px 29px;
+
+  transition: var(--Transition);
+}
+
+.main-article-button:is(:hover, :focus-visible) {
+  background: var(--Primary-Color);
 }
 
 .main-article-content-inner {
@@ -341,6 +357,12 @@ picture img {
   font-weight: 800;
 
   margin-bottom: 8px;
+
+  transition: var(--Transition);
+}
+
+.new-articles-list-heading:is(:hover, :focus-visible) {
+  color: var(--Tertiary-Color);
 }
 
 .new-articles-list-text {
@@ -395,11 +417,18 @@ picture img {
 
   margin-bottom: 12px;
 }
+
 .more-articles-list-heading {
   font-size: var(--More-Heading-FS);
   color: var(--Primary-Color);
 
   margin-bottom: 9px;
+
+  transition: var(--Transition);
+}
+
+.more-articles-list-heading:is(:hover, :focus-visible) {
+  color: var(--Secondary-Color);
 }
 
 .more-articles-list-text {
@@ -492,6 +521,5 @@ picture img {
   .more-articles-list {
     flex-direction: row;
     grid-template: 36px;
-    /* justify-content: space-between; */
   }
 }
