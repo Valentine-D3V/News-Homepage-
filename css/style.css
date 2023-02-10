@@ -175,6 +175,12 @@ header {
 
 /* NAV */
 
+.navbar {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+}
+
 [aria-controls="nav-menu"] {
   all: unset;
   display: block;
@@ -213,11 +219,12 @@ header {
   visibility: hidden;
 }
 
-.nav-menu {
+/* .nav-menu {
   background: var(--Nav-Background);
 
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 14.4px;
 
   min-height: 100vh;
@@ -231,7 +238,7 @@ header {
   visibility: visible;
   padding: 100px 32px 32px 52px;
   box-shadow: -5px 0 11px 0 rgb(0 0 0 / 0.2);
-}
+} */
 
 /* ******************* */
 /* MAIN ARTICLE */
@@ -408,7 +415,43 @@ picture img {
 @media (min-width: 1000px) {
   header {
     padding: 10px;
-    margin: 55px auto 40px auto;
+    margin: 59px auto 45px auto;
+  }
+
+  .navbar {
+    position: static;
+    inset-block-start: 1rem;
+    inset-inline-end: 1rem;
+  }
+
+  [aria-controls="nav-menu"] {
+    all: unset;
+    display: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  [aria-expanded="false"] + .nav-menu {
+    transform: none;
+    visibility: visible;
+  }
+
+  .nav-menu {
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 39px;
+    min-height: auto;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: static;
+    top: 0;
+    right: 0;
+    width: 100%;
+    visibility: visible;
   }
 
   main {
