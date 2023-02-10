@@ -101,13 +101,13 @@ button {
   --Font-Family: "Inter", sans-serif;
 
   /* 18.00px → 15.00px */
-  --Nav-FS: clamp(0.94rem, calc(1.19rem + -0.28vw), 1.13rem);
+  --Nav-FS: clamp(0.94rem, calc(1.22rem + -0.41vw), 1.13rem);
 
   /* 40.00px → 56.00px */
-  --Main-Article-Heading-FS: clamp(2.5rem, calc(2.15rem + 1.5vw), 3.5rem);
+  --Main-Article-Heading-FS: clamp(2.5rem, calc(1.99rem + 2.18vw), 3.5rem);
 
   /* 32.00px → 40.00px */
-  --New--Heading-FS: clamp(2rem, calc(1.82rem + 0.75vw), 2.5rem);
+  --New-Heading-FS: clamp(2rem, calc(1.74rem + 1.09vw), 2.5rem);
   --New-Article-Heading-FS: 1.25rem;
 
   --More-Heading-FS: 1.13rem;
@@ -153,7 +153,7 @@ main {
     "main-article"
     "new-articles"
     "more-articles";
-  gap: 20px;
+  gap: 32px;
 
   margin: 0 auto;
 }
@@ -163,7 +163,7 @@ main {
 /* ******************* */
 
 header {
-  max-width: 1110px;
+  max-width: 1130px;
 
   display: flex;
   align-items: center;
@@ -239,9 +239,13 @@ header {
 
 .main-article {
   display: grid;
-  gap: 20px;
+  gap: 28px;
 
   grid-area: main-article;
+}
+
+picture img {
+  width: 100%;
 }
 
 .main-article-content {
@@ -250,8 +254,14 @@ header {
   gap: 20px;
 }
 
+.main-article-content > * {
+  flex-basis: 50%;
+}
+
 .main-article-heading {
   font-size: var(--Main-Article-Heading-FS);
+  font-weight: 800;
+  line-height: 40px;
 }
 
 .main-article-text {
@@ -267,15 +277,17 @@ header {
   letter-spacing: 4.38 px;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 4.8px;
   color: var(--Tertiary-Text-Color);
 
   background: var(--Secondary-Color);
-  padding: 16px 32px;
+  padding: 13px 29px;
 }
 
 .main-article-content-inner {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
 }
 
@@ -284,22 +296,26 @@ header {
 /* ******************* */
 
 .new-articles {
+  max-width: 100%;
   background: var(--Primary-Color);
 
-  padding: 24px 21px 24px 20px;
+  padding: 24px 24px 31px 25px;
 
   grid-area: new-articles;
+
+  align-self: start;
 }
 
 .new-articles-heading {
+  font-size: var(--New-Heading-FS);
   color: var(--Tertiary-Color);
-  margin-bottom: 35px;
+  margin-bottom: 21px;
 }
 
 .new-articles-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 31px;
 }
 
 .new-articles-list li {
@@ -311,17 +327,25 @@ header {
 }
 
 .new-articles-list-heading {
+  font-size: var(--New-Article-Heading-FS);
   color: var(--Tertiary-Text-Color);
   line-height: 24px;
   font-weight: 800;
+
+  margin-bottom: 8px;
 }
 
 .new-articles-list-text {
+  font-size: var(--Text-FS);
   color: var(--Number-Color);
   font-weight: 400;
   line-height: 26px;
 
   margin-bottom: 29px;
+}
+
+.new-articles-list-text-margin {
+  margin-bottom: 0;
 }
 
 /* ******************* */
@@ -337,16 +361,19 @@ header {
   display: flex;
   flex-direction: column;
 
-  gap: 32px;
+  gap: 30px;
+
+  padding: 42px 0 24px 0;
 }
 
 .more-articles-list-item {
+  /* max-width: 350px; */
   display: flex;
   gap: 24px;
 }
 
 .more-articles-list-image {
-  max-width: 150px;
+  max-width: 100px;
 }
 
 .more-articles-list-item img {
@@ -358,14 +385,18 @@ header {
   line-height: 32px;
   font-weight: 700;
   color: var(--Number-Color);
+
+  margin-bottom: 12px;
 }
 .more-articles-list-heading {
   font-size: var(--More-Heading-FS);
   color: var(--Primary-Color);
+
+  margin-bottom: 9px;
 }
 
 .more-articles-list-text {
-  max-width: 22ch;
+  max-width: 27ch;
   font-size: var(--Text-FS);
   color: var(--Primary-Text-Color);
 }
@@ -374,24 +405,41 @@ header {
 /* MEDIA QUERY */
 /* ******************* */
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
+  header {
+    padding: 10px;
+    margin: 55px auto 40px auto;
+  }
+
   main {
     display: grid;
     grid-template-areas:
       "main-article new-articles"
       "more-articles more-articles";
-    gap: 20px;
+    gap: 30px;
   }
 
   .main-article-content {
     flex-direction: row;
-    gap: 20px;
+    gap: 30px;
+  }
+
+  picture {
+    max-width: 730px;
+  }
+
+  .main-article-heading {
+    line-height: 56px;
   }
 
   .main-article-content-inner {
     align-items: start;
     justify-content: space-between;
     gap: 20px;
+  }
+
+  .new-articles {
+    max-width: 350px;
   }
 
   .more-articles-list {
