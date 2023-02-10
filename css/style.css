@@ -225,6 +225,8 @@ header {
   visibility: visible;
 
   font-size: var(--Nav-FS);
+  line-height: 24px;
+  font-weight: 400;
   color: var(--Primary-Color);
 
   display: flex;
@@ -289,6 +291,13 @@ picture img {
   color: var(--Primary-Text-Color);
 }
 
+.main-article-content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
 .main-article-button {
   font-size: var(--Button-FS);
   text-align: center;
@@ -306,13 +315,6 @@ picture img {
 
 .main-article-button:is(:hover, :focus-visible) {
   background: var(--Primary-Color);
-}
-
-.main-article-content-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
 }
 
 /* ******************* */
@@ -384,7 +386,7 @@ picture img {
 
 .more-articles {
   grid-area: more-articles;
-  /* width: 100%; */
+  padding: 42px 0 24px 0;
 }
 
 .more-articles-list {
@@ -392,8 +394,6 @@ picture img {
   flex-direction: column;
 
   gap: 30px;
-
-  padding: 42px 0 24px 0;
 }
 
 .more-articles-list-item {
@@ -420,6 +420,8 @@ picture img {
 
 .more-articles-list-heading {
   font-size: var(--More-Heading-FS);
+  line-height: 24px;
+  font-weight: 800;
   color: var(--Primary-Color);
 
   margin-bottom: 9px;
@@ -434,6 +436,7 @@ picture img {
 .more-articles-list-text {
   max-width: 27ch;
   font-size: var(--Text-FS);
+  line-height: 26px;
   color: var(--Primary-Text-Color);
 }
 
@@ -468,11 +471,12 @@ picture img {
   .nav-menu {
     visibility: visible;
 
+    line-height: 26px;
     color: var(--Primary-Text-Color);
 
     display: flex;
     flex-direction: row;
-    gap: 38px;
+    gap: 43px;
 
     min-height: auto;
     width: 100%;
